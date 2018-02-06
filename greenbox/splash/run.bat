@@ -1,0 +1,1 @@
+mkdir %~dp0platforms\android\res\layout

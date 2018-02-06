@@ -1,0 +1,92 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>SMS</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body onkeydown="ginfo(event)">
+	<!--dlg start//-->
+	<div id=back></div>
+
+	<div id=sys class=dlg>
+		<img src=img/close.png class=close onclick='dlgclose()'>
+		<p class=dt>프로젝트폴더설정</p>
+		<p class=dc id=rpath></p>
+		<p class=dc>프로젝트 루트 폴더의 경로를 입력해주세요.</p>
+		<center><input type=text id=root><br></center>
+		<btm><div class=btn onclick="syssave()">저장하기</div></btm>
+	</div>
+
+	<div id=green class=dlg>
+		<img src=img/close.png class=close onclick='dlgclose()'>
+		<p class=dt id=gdlgtitle>엽록체생성</p>
+		<input type=text class=sinput placeholder="엽록체이름" id=gname>&nbsp;&nbsp;<div class=sbtn onclick='makefolder()' id=makefolderbtn>폴더생성</div>
+		<div class=sub-cont>
+			<div class=sub id=sub1 onclick="subclick(1)">변수</div><div class=sub id=sub2 onclick="subclick(2)">파일</div><div class=sub id=sub3 onclick="subclick(3)">코드</div><div class=sub id=sub4 onclick="subclick(4)">명령어</div>
+			<div id=cont1 class=cont>
+				<input type=text class=nameinput placeholder="변수이름" id=val1>
+				<input type=text class=nameinput placeholder="변수이름" id=val2>
+				<div class=addbtn id=addvar onclick="addvar()">변수추가</div>
+			</div>
+			<div id=cont2 class=cont>
+				<input type=text class=fileinput placeholder="파일경로" id=file1>&nbsp;&nbsp;<input type=text class=fileinput placeholder="복사될 경로" id=copy1>
+				<input type=text class=fileinput placeholder="파일경로" id=file2>&nbsp;&nbsp;<input type=text class=fileinput placeholder="복사될 경로" id=copy2>
+				<div class=addbtn id=addfile onclick="addfile()">파일추가</div>
+			</div>
+			<div id=cont3 class=cont>
+				<input type=text class=sinput placeholder="소스이름" id=sn1>&nbsp;&nbsp;<input type=text class=sinput placeholder="예제소스 경로" id=ex1>&nbsp;&nbsp;<div class=sbtn onclick='sedit(1)'>소스입력</div>
+				<textarea class=sedit id=sedit1 row=100 cols=80></textarea>
+				<input type=text class=sinput placeholder="소스이름" id=sn2>&nbsp;&nbsp;<input type=text class=sinput placeholder="예제소스 경로" id=ex2>&nbsp;&nbsp;<div class=sbtn onclick='sedit(2)'>소스입력</div>
+				<textarea class=sedit id=sedit2 row=100 cols=80></textarea>
+				<div class=addbtn id=adds onclick="adds()">소스추가</div>
+			</div>
+			<div id=cont4 class=cont>
+				<textarea class=cmd id=cmd row=100 cols=80></textarea>
+			</div>
+		</div>
+		<btm><div class=btn onclick="gresave()">생성하기</div></btm>
+	</div>
+	<!--dlg end//-->
+		
+	
+
+	<!--nav start//-->
+	<div id=sidebar onmouseover='navover()' onmouseleave="navout()">
+		<div class=navitem onclick='menu(1)'><center><img class=navicon src=img/config.png><br>시스템설정</center></div>
+		<div class=navitem onclick='menu(2)'><center><img class=navicon src=img/boxsetting.png><br>엽록체생성</center></div>
+		<!--<div class=navitem onclick='menu(3)'><center><img class=navicon src=img/love.png><br>멘탈관리기</center></div>//-->
+		<div class=navitem onclick='menu(4)'><center><img class=navicon src=img/info.png><br>시스템소개</center></div>
+	</div>
+	<!--nav end//-->
+
+	
+
+
+	<center><div id=lev3 onclick='levclick(event)'>
+		<center><div id=lev2 onclick='levclick(event)'>
+						<!--
+						<div class=cube-g id=g99 onclick='cubeclick(99)'>
+							<img src=img/smile.png class=cube onmouseover='cubeover(this)' onmouseout='cubeout(this)'><p class=cube-name>HI</p>
+							<div id=spin99 class=spinner><div class=double-bounce1></div><div class=double-bounce2></div></div>
+						</div>//-->
+			<center><div id=lev1 onclick='levclick(event)'></div></center>
+		</div></center>
+	</div></center>
+
+	<div class=btm-nav>
+		<div class=btm-nav-item onclick='gmove()'><img src=img/move.png class=btm-nav-img><p class=btm-nav-txt>이동</p></div>
+		<div class=btm-nav-item onclick='adjust()'><img src=img/play.png class=btm-nav-img><p class=btm-nav-txt>적용</p></div>
+		<div class=btm-nav-item><img src=img/trash.png class=btm-nav-img><p class=btm-nav-txt-t>삭제</p></div>
+	</div>
+
+	<div class=clip-g>
+		<!--<div class=clip-item><textarea onclick="CopyToClipboard(this,this)" id=clip1 class=clip></textarea><p class=clip-t id=clip1-t>가나다</p></div>//-->
+	</div>
+
+
+
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+	<script src="js/index.js"></script>
+</body>
+</html>
